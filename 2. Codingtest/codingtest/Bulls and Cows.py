@@ -32,7 +32,7 @@ def take_guess():
 #strike, ball count
 def get_score(guess, solution):
     strike_count = 0
-    ball_count = 0s
+    ball_count = 0
 
     for i in range(3):
         if guess[i] == solution[i]:
