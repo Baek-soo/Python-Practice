@@ -21,7 +21,7 @@
 # .rjust(값) : 값만큼의 칸을 기본으로 잡고 오른쪽으로 들여쓰기 (ex. print(f'{g.name.rjust(6}'))
 # .ljust(값) : 값만큼의 칸을 기본으로 잡고 왼쪽으로 들여쓰기 (ex. print(f'{g.name.ljust(6)}'))
 
-# .appen(값) : 괄호 안의 값을 리스트 맨 뒤에 추가한다. (ex. data = [1,2,3]   data.append(6) print(data) ->  [1,2,3,6])
+# .append(값) : 괄호 안의 값을 리스트 맨 뒤에 추가한다. (ex. data = [1,2,3]   data.append(6) print(data) ->  [1,2,3,6])
 # .reverse() : 괄호 안의 리스트를 역으로 취한다. (ex. data.reverse() -> [3,2,1])
 # .inset(자리, 값) : 리스트의 '자리'번째에 '값' 넣는다. (ex. data.inset(1,10) -> [1,10,2,3])
 # del : 원하는 위치의 값을 지운다. (ex. del data[2] -> [1,2], del data[:] -> [])
