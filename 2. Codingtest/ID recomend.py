@@ -1,9 +1,9 @@
 def solution(new_id):
     #1단계 소문자 치환
-    new_id.lower()
+    new_id = new_id.lower()
     #2단계 '-', '_', '.'를 제외한 문자는 모두 지운다. 
     for char in new_id:
-        if char not in 'abcdefgfijklmnopqrstuvwxyz0123456789-_.':
+        if char not in 'abcdefghijklmnopqrstuvwxyz0123456789-_.':
             new_id = new_id.replace(char, '')
     #3단계 '.'가 2번 이상 나올수 없다.
     for char in new_id:
@@ -18,7 +18,7 @@ def solution(new_id):
     if len(new_id) == 0:
         new_id += 'a'
     #6단계 16개 이상이면 처음 15개를 제외하고 모두 제거 만약 제거하고 마침표가 마지막에 존재한다면 마침표도 제거
-    if len(new_id) > 15:
+    if len(new_id) > 16:
         new_id = new_id[:15]
     if new_id.endswith('.'):
         new_id = new_id[:-1]   
