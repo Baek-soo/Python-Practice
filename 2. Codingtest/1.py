@@ -1,8 +1,6 @@
-participant = ['i', 'love', 'you', 'i', 'hate', 'your', 'hand']
-completion = ['love', 'you', 'i', 'hate', 'your', 'hand']
+new = '.help me somebody.'
 
-participant.sort()
-completion.sort()
-print(participant)
+if new.endswith('.'):
+    new = new[:-2]
 
-print(completion)
+print(new)
