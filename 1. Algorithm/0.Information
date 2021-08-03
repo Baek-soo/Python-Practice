@@ -75,7 +75,7 @@ lambda : 쓰고 버리는 일시적인 함수. 함수가 생성된 곳에서만 
                           (ex. f = inc(2); g = inc(4)               )
                           (ex. print(f(12))  -->  14                )
                           (ex. print(g(12))  -->  16                )
-map(function, literable, ...) : 람다함수의장점으로 두개의 인수를 가진다. 
+map(function, literable, ...) : 람다함수의장점으로 두개의 인수를 가진다. 첫번째 매개변수로 함수가 오고 두번째 매개변수로 반복 가능한 자료형(리스트, 튜플 등)이 온다.  
                           (ex. a = [1,2,3,4]   b = [9,8,7,6]                         )
                           (ex. list(map(lamda x, y:x+y, a, b))  --> [10,10,10,10]    )
 filter(function, literable) : 두개의 인수를 가진다. function은 처리되는 각각의 요소에 대해 Boolean 값을 반환한다. True를 반환하면 그 요소는 남게되고, Flase라면 요소를 제거한다.
