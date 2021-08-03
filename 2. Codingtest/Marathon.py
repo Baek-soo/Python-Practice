@@ -9,7 +9,3 @@ def solution(participant, completion):
         if participant[i] != completion[i]:
             return participant[i]
 
-participant = ['i', 'love', 'you', 'hate', 'your', 'hand', 'help']
-completion = ['love', 'you', 'i', 'hate', 'your', 'hand']
-answer = solution(participant, completion)
-print(answer)
