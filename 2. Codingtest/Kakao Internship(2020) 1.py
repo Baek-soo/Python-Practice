@@ -1,3 +1,5 @@
+#key_pad left/right hand
+
 def solution(numbers, hand):
     answer = ''
     
