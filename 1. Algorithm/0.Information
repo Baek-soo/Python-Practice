@@ -33,7 +33,7 @@ del : 원하는 위치의 값을 지운다. (ex. del data[2] -> [1,2], del data[
 .extend(list2) : 리스트의 마지막에 list2의 값들을 더해준다. (ex. h = [6, 7, 8]  data.extend(h) -> [1,2,3,6,7,8])
 .join(리스트) : 매개변수로 들어온 ['a','b','c'] 이런식의 리스트를 'abc'의 문자열로 합쳐서 반환해주는 함수
 '구분자'.join(리스트) : 리스트의 값과 값 사이에 '구분자'에 들어온 구분자를 넣어서 하나의 문자열로 합쳐줍니다. (ex. '_'.join(['a','b','c']))라고 하면 'a_b_c'와 같은 형태로 문자열을 만들어서 반환해줍니다. 
-
+.split() : 공백을 기준으로 분리한다. (ex. data = [1,2,3,4]  data.split() --> ['1','2','3','4'])
 
 
 random.random() : 0.0에서 1.0까지의 실수(float)를 반환한다. (0.0 <= x < 1.0)
@@ -70,5 +70,15 @@ $ : 이 패턴으로 종료되어야 함 (ex. xyz$ : xyz로 종료되어야 함)
 \ : 메타문자를 일반문자로 취급하게 해준다. (ex. st = re.sub('[^a-z0-9\-_.]','', st))
 
 
-
+lambda : 쓰고 버리는 일시적인 함수. 함수가 생성된 곳에서만 필요 -> return문이 포함되어 있지 않다. (ex. g = lambda x:x**2  print(g(8)) --> 64)
+                          (ex. def inc(n): return lamda x:x+n       )
+                          (ex. f = inc(2); g = inc(4)               )
+                          (ex. print(f(12))  -->  14                )
+                          (ex. print(g(12))  -->  16                )
+map(function, literable, ...) : 람다함수의장점으로 두개의 인수를 가진다. 
+                          (ex. a = [1,2,3,4]   b = [9,8,7,6]                         )
+                          (ex. list(map(lamda x, y:x+y, a, b))  --> [10,10,10,10]    )
+filter(function, literable) : 두개의 인수를 가진다. function은 처리되는 각각의 요소에 대해 Boolean 값을 반환한다. True를 반환하면 그 요소는 남게되고, Flase라면 요소를 제거한다.
+                          (ex. a = [2,18,9,22,17,24,8,12,27]                            )
+                          (ex. list(filter(lambda x:x %3 == 0, foo)) --> [18,9,24,12,27])
 
