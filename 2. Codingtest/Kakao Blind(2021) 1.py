@@ -31,3 +31,15 @@ def solution(new_id):
     return new_id
 
 
+# 미친 문제 풀이
+# import re
+# def solution(new_id):
+#     st = new_id
+#     st = st.lower() #소문자 구별
+#     st = re.sub('[^a-z0-9\-_.]','', st) #저거 이외에는 제거
+#     st = re.sub('\.+', '.', st) #.가 2개 이상있으면 한개로 변겅
+#     st = re.sub('^[.]|[.]$', '', st) #.으로 시작하거나 끝나면 없앤다
+#     st = 'a' if len(st) == 0 else st[:15] #빈문자열이라 'a'를 대입
+#     st = re.sub('^[.]|[.]$', '', st) #.으로 시작하거나 끝나면 없앤다
+#     st = st if len(st) > 2 else st + "".join([st[-1] for i in range(3-len(st))]) #길이가 2개 이하이면 [-1]에것을 붙여준다
+#     return st
