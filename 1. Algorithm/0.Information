@@ -1,4 +1,4 @@
-
+*****수식 관련*****
  / : 나눗셈 (ex. 7/4 == 1/75)
  // : 몫 구하기 (ex. 7//4 == 1)
  % : 나머지 구하기 (ex. 7%4 == 3)
@@ -8,6 +8,7 @@ math.pow(상수, 제곱근) : 제곱의 표현(이걸 사용하기 위해서는 
 math.sqrt() : sqrt
 
 
+*****print 관련*****
 end = '' : 아웃풋을 낼때 end의 형식에 맞춰서 결과가 나옴 (ex. print(sum, end = ', ') → 1, 3, 5, 7 이런 형식으로 나옴) 
 \t : 한 줄에 Tab만큼 떨어져서 결과값이 나온다. (ex. print(data[i], end = '\t')) 
 \n : 한줄 띄기
@@ -22,7 +23,12 @@ $s : 문자열 출력 (ex. print('%s' %S1))
 %f : 실수 출력
 .rjust(값) : 값만큼의 칸을 기본으로 잡고 오른쪽으로 들여쓰기 (ex. print(f'{g.name.rjust(6}'))
 .ljust(값) : 값만큼의 칸을 기본으로 잡고 왼쪽으로 들여쓰기 (ex. print(f'{g.name.ljust(6)}'))
+.isdigit() : 해당 문자열이 '숫자'로 이루어져 있는지 검사한다.
+.isdecimal() : 해당 문자열이 0부터 9까지의 수로 이루어진 것인지 검사한다. 
+.isnumeric() : 이 함수를 '수로 볼 수 있는 것'인 경우 True를 반환한다. 
 
+
+*****list활용*****
 .append(값) : 괄호 안의 값을 리스트 맨 뒤에 추가한다. (ex. data = [1,2,3]   data.append(6) print(data) ->  [1,2,3,6])
 .insert(넣을 위치offset, 넣고자 하는 요소) : (ex. data = ['1','2','3']   data.insert('0', '4')  --> data = ['4','1','2','3'])
 .reverse() : 괄호 안의 리스트를 역으로 취한다. (ex. data.reverse() -> [3,2,1])
@@ -34,8 +40,32 @@ del : 원하는 위치의 값을 지운다. (ex. del data[2] -> [1,2], del data[
 "".join(리스트) : 매개변수로 들어온 ['a','b','c'] 이런식의 리스트를 'abc'의 문자열로 합쳐서 반환해주는 함수
 '구분자'.join(리스트) : 리스트의 값과 값 사이에 '구분자'에 들어온 구분자를 넣어서 하나의 문자열로 합쳐줍니다. (ex. '_'.join(['a','b','c'])라고 하면 'a_b_c'와 같은 형태로 문자열을 만들어서 반환해줍니다. )
 .split() : 공백을 기준으로 분리한다. (ex. data = [1,2,3,4]  data.split() --> ['1','2','3','4'])
+.Counter(list/string) : list속에서 같은것들의 갯수를 샌다. (ex. from collection import Counter  list = ['hello', 'hi', 'how', 'when', 'where', 'hello']  print(Counter(list)) --> Counter({'hello': 2, 'hi': 1, 'how': 1, 'when': 1, 'where': 1}))
 
 
+*****문자열 활용*****
+문자열.replace("검색 문자", "치환 문자"[,치환 횟수]) : 검색 문자에 문자열에서 착을 문자를 지정하고 치환문자에  변경하고 싶은 문자를 적고 치환 횟수에 차환하고 싶은 횟수를 적는다(생략가능)
+
+
+
+
+
+
+
+
+
+
+
+.key() : #ex. member = {'ID' : 102, 'Name' : 'fofofofo', 'Address' : 'seoul'} 
+         #print(member.keys())
+         #---> deic_keys(['ID', 'Name', 'Address'])
+         #print(list(member.keys()))
+         #---> ['ID', 'Name', 'Address']
+.get() : 출력하고자 하는 key가 없으면 오류가 아닌 None을 출력한다.
+.values() : .key의 예시에서 102, fofofofo, seoul을 출력한다. 
+.items() : 딕셔너리에 있는 키와 값들을 쌍으로 얻는다. (ex. car = {"name" : "BMW", "price" : "7000"} car.items())
+
+*****랜덤 관련*****
 random.random() : 0.0에서 1.0까지의 실수(float)를 반환한다. (0.0 <= x < 1.0)
 random.uniform(a,b) : a~b사이의 실수(float)를 반환한다. (a <= x <= b)
 random.randint(a,b) : a~b사이의 정수(int)를 반환한다. (a <= x <= b)
@@ -44,13 +74,13 @@ random.choice(seq) : 매개변수로 seq타입(문자열, 튜플, 리스트)을 
 random.sample(seq or set, N) : 첫번째 매개변수로 시퀀스 데이터 타입(듀플, 문자열, range, 리스트) 또는 Set 타입을 받을 수 있다. 두번째 매개변수로는 랜덤하게 뽑을 인자의 갯수이다. 이때 뽑는 element가 겹치지 않는다. 
 random.shuffle(seq) : 데이터의 순서를 무작위로 바꾸어준다. 이때 리스트 형태만 가능하다. (문자열, 튜플, range(a,b) 불가능)
 
-
+*****파일 생성*****
 with open("file.txt", 'w') as f:
   f.write('hello world')
  ----> sorce파일에 파일 생기고 실행하고 닫힘
 
 
-정규식 표현법(import re)
+*****정규식 표현법(import re)*****
 re.match(pattern, string, flags) : 문자열의 처음부터 사작하여 패턴이 일치되는 것이 있는지를 확인한다. 
 re.sub(정규식 표현, 대상 문자열, 치환 문자) : 정규식 문자열 치환
 ^ : 이 패턴으로 시작해야 함 (ex. ^abc : abc로 시작해야함)
@@ -70,6 +100,7 @@ $ : 이 패턴으로 종료되어야 함 (ex. xyz$ : xyz로 종료되어야 함)
 \ : 메타문자를 일반문자로 취급하게 해준다. (ex. st = re.sub('[^a-z0-9\-_.]','', st))
 
 
+*****변수 생성*****
 lambda : 쓰고 버리는 일시적인 함수. 함수가 생성된 곳에서만 필요 -> return문이 포함되어 있지 않다. (ex. g = lambda x:x**2  print(g(8)) --> 64)
                           (ex. def inc(n): return lamda x:x+n       )
                           (ex. f = inc(2); g = inc(4)               )
