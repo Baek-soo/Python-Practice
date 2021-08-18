@@ -28,6 +28,22 @@ $s : 문자열 출력 (ex. print('%s' %S1))
 .isnumeric() : 이 함수를 '수로 볼 수 있는 것'인 경우 True를 반환한다. 
 
 
+*****조건문*****
+try , except : whlie문에서 try에 실행할 코드를 넣고 except에 예외가 발생했을 때 처리하는 코드를 말한다. 
+as : except의 조건을 변수로 반환한다.
+          #ex. try:
+          #       실행할 코드
+          #except 예외 as 변수
+          #       예외가 발생했을 때 처리하는 코드
+          #       print(f'예외가 발생했습니다. {변수}')
+
+
+*****Error (if, for, while문 등의 조건에 사용할 수 있다.)*****
+IndexError : 범위를 벗어난 인덱스에 접근하여 에러가 발생했을 때
+ZeroDivisionError : 숫자를 0으로 나눠서 에러가 발생했을 때
+
+
+
 *****list활용*****
 .append(값) : 괄호 안의 값을 리스트 맨 뒤에 추가한다. (ex. data = [1,2,3]   data.append(6) print(data) ->  [1,2,3,6])
 .insert(넣을 위치offset, 넣고자 하는 요소) : (ex. data = ['1','2','3']   data.insert('0', '4')  --> data = ['4','1','2','3'])
@@ -39,12 +55,23 @@ del : 원하는 위치의 값을 지운다. (ex. del data[2] -> [1,2], del data[
 .extend(list2) : 리스트의 마지막에 list2의 값들을 더해준다. (ex. h = [6, 7, 8]  data.extend(h) -> [1,2,3,6,7,8])
 "".join(리스트) : 매개변수로 들어온 ['a','b','c'] 이런식의 리스트를 'abc'의 문자열로 합쳐서 반환해주는 함수
 '구분자'.join(리스트) : 리스트의 값과 값 사이에 '구분자'에 들어온 구분자를 넣어서 하나의 문자열로 합쳐줍니다. (ex. '_'.join(['a','b','c'])라고 하면 'a_b_c'와 같은 형태로 문자열을 만들어서 반환해줍니다. )
-.split() : 공백을 기준으로 분리한다. (ex. data = [1,2,3,4]  data.split() --> ['1','2','3','4'])
+.split() : 공백을 기준으로 분리한다. (ex. data = [1 2 3 4]  data.split() --> ['1','2','3','4'])
+.split('문자') : '문자'를 기준으로 분리한다. (ex. data = "1.2.3.4"  data.split('.') --> ['1','2','3','4'])
 .Counter(list/string) : list속에서 같은것들의 갯수를 샌다. (ex. from collection import Counter  list = ['hello', 'hi', 'how', 'when', 'where', 'hello']  print(Counter(list)) --> Counter({'hello': 2, 'hi': 1, 'how': 1, 'when': 1, 'where': 1}))
-
+max(list) : 최댓값 반환
+min(list) : 최솟값 반환
+.index(index) : list에서 index의 위치를 반환한다.
+heapq.heapqpush(list, text or num) : 오름차순의 우선순위를 따져서 text or num을 넣는다.
+heapq.heappop(list) : list의 0번째 순위의 값(우선순위가 높은 값)을 없앤다.
+heapq.heapify(list) : list 내 정렬
+heapq.heapreplace(list, item) : list에서 가장 작은 항목을 팝하고 반환하여, 새로운 item도 푸시한다. 
+list(map('형태ex.int', list)) : list의 형태를 '형태'로 바꾸고 list형태로 반환한다. 
+        
 
 *****문자열 활용*****
-문자열.replace("검색 문자", "치환 문자"[,치환 횟수]) : 검색 문자에 문자열에서 착을 문자를 지정하고 치환문자에  변경하고 싶은 문자를 적고 치환 횟수에 차환하고 싶은 횟수를 적는다(생략가능)
+string.replace("검색 문자", "치환 문자"[,치환 횟수]) : 검색 문자에 문자열에서 착을 문자를 지정하고 치환문자에  변경하고 싶은 문자를 적고 치환 횟수에 차환하고 싶은 횟수를 적는다(생략가능)
+string.found('검색 문자') : 검색 문자의 위치를 반환한다.
+string.insert(위치, 'string') : '위치'에 'string'을 넣는다.
 
 .key() : #ex. member = {'ID' : 102, 'Name' : 'fofofofo', 'Address' : 'seoul'} 
          #print(member.keys())
