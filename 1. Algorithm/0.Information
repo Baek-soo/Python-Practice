@@ -61,8 +61,8 @@ del : 원하는 위치의 값을 지운다. (ex. del data[2] -> [1,2], del data[
 max(list) : 최댓값 반환
 min(list) : 최솟값 반환
 .index(index) : list에서 index의 위치를 반환한다.
-heapq.heapqpush(list, text or num) : 오름차순의 우선순위를 따져서 text or num을 넣는다.
-heapq.heappop(list) : list의 0번째 순위의 값(우선순위가 높은 값)을 없앤다.
+heapq.heapqpush(list, text or num) : 오름차순으로 우선순위를 따져서 text or num을 넣는다.
+heapq.heappop(list) : list의 0번째 순위의 값(우선순위가 높은 값)을 pop & 리턴 한다. (ex. result = heap[0] --> print(result) : 10, print(heap) : [20, 30])
 heapq.heapify(list) : list 내 정렬
 heapq.heapreplace(list, item) : list에서 가장 작은 항목을 팝하고 반환하여, 새로운 item도 푸시한다. 
 list(map('형태ex.int', list)) : list의 형태를 '형태'로 바꾸고 list형태로 반환한다. 
